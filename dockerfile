@@ -1,12 +1,9 @@
 FROM node:alpine
 
-WORKDIR /usr/src/app
 
-COPY package*.json ./
-
+WORKDIR /usr/app
+COPY ./ /usr/app
 RUN npm install
 
-COPY . .
-
 EXPOSE 3000
-CMD [ "node", "index.js" ]
+CMD [ "npm","start" ]
